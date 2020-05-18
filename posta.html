@@ -21,39 +21,10 @@
    <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
 
-<?php
-
-//create array of data to be posted
-$post_data['firstName'] = 'text';
-$post_data['action'] = 'post';
-
-//traverse array and prepare data for posting (key1=value1)
-foreach ( $post_data as $key => $value) {
-    $post_items[] = $key . '=' . $value;
-}
-
-//create the final string to be posted using implode()
-$post_string = implode ('&', $post_items);
-
-//we also need to add a question mark at the beginning of the string
-$post_string = '?' . $post_string;
-
-//we are going to need the length of the data string
-$data_length = strlen($post_string);
-
-//let's open the connection
-$connection = fsockopen('www.allthingssindy.me', 80); 
-
-//sending the data
-fputs($connection, "POST  /target_url.php  HTTP/1.1\r\n"); 
-fputs($connection, "Host:  www.allthingssindy.me \r\n"); 
-fputs($connection, 
-    "Content-Type: application/x-www-form-urlencoded\r\n"); 
-fputs($connection, "Content-Length: $data_length\r\n"); 
-fputs($connection, "Connection: close\r\n\r\n"); 
-fputs($connection, $post_string); 
-
-//closing the connection
-fclose($connection);
-
+<?
+echo "<script type=\"text/javascript\"> 
+                window.onload=function(){
+                    document.forms['paypalform'].submit();
+                }
+       </script>";
 ?>
