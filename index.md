@@ -2,7 +2,7 @@
     {% for post in site.post %}
 
    <li>
-      <a href="{{ post.url }}"> {{ post.title }} </a>
+      <a href=" /all-things-sindy.me{{ post.url }}"> {{ post.title }} </a>
       
      <li>
    
